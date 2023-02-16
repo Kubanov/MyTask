@@ -1,4 +1,4 @@
-name: CI
+name: CI with docker
 
 on:
   push:
@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mytask/task:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mytask/task/dockerfile:latest
