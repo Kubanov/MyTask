@@ -1,4 +1,4 @@
-name: CI with docker
+name: ci
 
 on:
   push:
@@ -22,8 +22,8 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Build and PUSH last Step
+        name: Build and push
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mytask/task/dockerfile:latest
+          tags: user/app:latest
