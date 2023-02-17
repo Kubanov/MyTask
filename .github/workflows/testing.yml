@@ -27,5 +27,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-      #    tags: ${{ secrets.DOCKERHUB_USERNAME }}/my-app-go:latest
-          tags: kubanov/task:tagname
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mytask/task:latest
+      
