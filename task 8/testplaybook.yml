@@ -1,0 +1,24 @@
+---
+- name: testplaybook
+  hosts: all
+  become: yes
+
+  vars:
+    source_file: /etc/systemd/system/testgo.service
+    destin_file: /home/testgo.service
+
+  tasks:
+    - name: Task automate
+      ping:
+   
+    - name: Copy file to servers
+      copy: src={{ source_file }} dest={{ destin_file }} 
+
+    - name: Systemd daemon
+      ansible.builtin.systemd:
+        daemon_reload: true
+    - name: Run service
+      ansible.builtin.service:
+        name: testgo.service
+        state: started
+        enabled: true
